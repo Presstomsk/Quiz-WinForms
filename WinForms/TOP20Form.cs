@@ -19,7 +19,7 @@ namespace WinForms
         {
             InitializeComponent();
         }
-        public TOP20Form(CheckQuizForm form)
+        public TOP20Form(CheckQuizForm form, string selectedString)
         {
             InitializeComponent();
             formToOpen = form;
@@ -28,7 +28,7 @@ namespace WinForms
             dataGridView1.Columns[0].Width = 170;
             dataGridView1.Columns[1].Width = 160;
             db = new DataBaseConnect();
-            var list = db.ShowTop20("История");
+            var list = db.ShowTop20(selectedString);
             foreach (var item in list)
             {
                 dataGridView1.Rows.Add(item.Login,item.Score);

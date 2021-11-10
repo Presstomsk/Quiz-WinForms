@@ -13,6 +13,7 @@ namespace WinForms
     public partial class CheckQuizForm : Form
     {
         Form formToOpen;
+        string selectedString;
         public CheckQuizForm()
         {
             InitializeComponent();
@@ -21,7 +22,10 @@ namespace WinForms
         public CheckQuizForm(UserMenuForm form)
         {
             InitializeComponent();
-            formToOpen = form;
+            formToOpen = form;            
+            comboBox1.Items.AddRange(new string[] { "История", "География" });
+            comboBox1.Text = comboBox1.Items[0].ToString();
+
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -33,7 +37,7 @@ namespace WinForms
 
         private void button1_Click(object sender, EventArgs e)
         {
-            TOP20Form top20 = new TOP20Form(this);
+            TOP20Form top20 = new TOP20Form(this,selectedString);
             Hide();
             top20.Show();
             top20.Location = Location;
@@ -42,6 +46,11 @@ namespace WinForms
         private void CheckQuizForm_FormClosing(object sender, FormClosingEventArgs e)
         {
             Application.Exit();
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            selectedString = comboBox1.SelectedItem.ToString();            
         }
     }
 }
