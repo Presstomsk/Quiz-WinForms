@@ -39,7 +39,10 @@ namespace WinForms
 
         private void button3_Click(object sender, System.EventArgs e)
         {
-
+            CheckQuizForm top20 = new CheckQuizForm(this);
+            Hide();
+            top20.Show();
+            top20.Location = Location;
         }
 
         private void button1_Click(object sender, System.EventArgs e)

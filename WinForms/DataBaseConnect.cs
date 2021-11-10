@@ -1,5 +1,6 @@
 ﻿using MySql.Data.MySqlClient;
 using System;
+using System.Collections.Generic;
 
 namespace WinForms
 {
@@ -87,13 +88,13 @@ namespace WinForms
             Close();
             return list;
 
-        }
+        }*/
 
         public List<Top20List> ShowTop20(string TestName)
         {
             Open();
             var list = new List<Top20List>();
-            var sql = @$"SELECT login,score FROM tab_log
+            var sql = $@"SELECT login,score FROM tab_log
                             WHERE test_name='{TestName}'
                                 ORDER BY score DESC LIMIT 20;";
             command.CommandText = sql;
@@ -108,7 +109,7 @@ namespace WinForms
             }
             Close();
             return list;
-        }*/
+        }
 
         public bool PassChange(User user, string str)
         {

@@ -93,6 +93,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CheckQuizForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CheckQuizForm.Designer.cs">
+      <DependentUpon>CheckQuizForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="ConnectionString.cs" />
     <Compile Include="DataBaseConnect.cs" />
     <Compile Include="LoginForm.cs">
@@ -122,6 +128,13 @@
     <Compile Include="SettingsForm.Designer.cs">
       <DependentUpon>SettingsForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="TOP20Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TOP20Form.Designer.cs">
+      <DependentUpon>TOP20Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Top20List.cs" />
     <Compile Include="User.cs" />
     <Compile Include="UserMenuForm.cs">
       <SubType>Form</SubType>
@@ -129,6 +142,9 @@
     <Compile Include="UserMenuForm.Designer.cs">
       <DependentUpon>UserMenuForm.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="CheckQuizForm.resx">
+      <DependentUpon>CheckQuizForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -149,6 +165,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="SettingsForm.resx">
       <DependentUpon>SettingsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TOP20Form.resx">
+      <DependentUpon>TOP20Form.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserMenuForm.resx">
       <DependentUpon>UserMenuForm.cs</DependentUpon>
