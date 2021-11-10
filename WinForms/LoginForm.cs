@@ -18,7 +18,7 @@ namespace WinForms
         DataBaseConnect db;
         bool choice;
         Form formToOpen;
-        public LoginForm(Form1 form)
+        public LoginForm(MainForm form)
         {
             InitializeComponent();
             formToOpen = form;

@@ -1,5 +1,5 @@
 ﻿using MySql.Data.MySqlClient;
-
+using System;
 
 namespace WinForms
 {
@@ -108,14 +108,14 @@ namespace WinForms
             }
             Close();
             return list;
-        }
+        }*/
 
-        public bool LoginChange(User user, string str)
+        public bool PassChange(User user, string str)
         {
 
             user.Password = str;
             Open();
-            var sql = @$"UPDATE tab_user
+            var sql = $@"UPDATE tab_user
                            SET password='{user.Password}'
                              WHERE login='{user.Login}';";
             command.CommandText = sql;
@@ -124,17 +124,17 @@ namespace WinForms
             return num != 0;
 
         }
-        public bool DateOfBirthChange(User user, string str)
+        public bool DateOfBirthChange(User user, DateTime date)
         {
-            user.DateOfBirth = DateTime.Parse(str);
+            user.DateOfBirth = date;
             Open();
-            var sql = @$"UPDATE tab_user
+            var sql = $@"UPDATE tab_user
                            SET date_of_birth='{user.DateOfBirth?.ToString("yyyy-MM-dd")}'
                              WHERE login='{user.Login}';";
             command.CommandText = sql;
             var num = command.ExecuteNonQuery();
             Close();
             return num != 0;
-        }*/
+        }
     }
 }

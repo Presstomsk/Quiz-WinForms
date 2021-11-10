@@ -5,6 +5,7 @@ namespace WinForms
 {
     public partial class UserMenuForm : Form
     {
+        User user;
         public UserMenuForm()
         {
             InitializeComponent();
@@ -13,6 +14,7 @@ namespace WinForms
         {
             InitializeComponent();
             label1.Text = user.Login;
+            this.user = user;
         }
 
         private void UserMenuForm_Load(object sender, System.EventArgs e)
@@ -47,7 +49,10 @@ namespace WinForms
 
         private void button4_Click(object sender, System.EventArgs e)
         {
-
+            SettingsForm settingForm = new SettingsForm(this, user);
+            Hide();
+            settingForm.Show();
+            settingForm.Location = Location;
         }
 
         private void pictureBox1_Click(object sender, System.EventArgs e)
