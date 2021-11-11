@@ -29,7 +29,10 @@ namespace WinForms
 
         private void button2_Click(object sender, System.EventArgs e)
         {
-
+            ResultForm resultForm = new ResultForm(this, user);
+            Hide();
+            resultForm.Show();
+            resultForm.Location = Location;
         }
 
         private void button5_Click(object sender, System.EventArgs e)

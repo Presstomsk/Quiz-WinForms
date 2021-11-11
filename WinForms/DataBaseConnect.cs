@@ -67,7 +67,7 @@ namespace WinForms
             command.CommandText = sql;
             command.ExecuteNonQuery();
             Close();
-        }
+        }*/
 
         public List<QuizLog> ShowScoreHistory(User user)
         {
@@ -88,7 +88,7 @@ namespace WinForms
             Close();
             return list;
 
-        }*/
+        }
 
         public List<Top20List> ShowTop20(string TestName)
         {
