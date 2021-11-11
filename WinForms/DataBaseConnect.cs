@@ -59,15 +59,15 @@ namespace WinForms
             Close();
         }
 
-  /*      public void ScoreHistory(User user, string testName, uint score)
+        public void ScoreHistory(User user, string testName, uint score)
         {
             Open();
-            var sql = @$"INSERT INTO tab_log(login, date, test_name, score)
+            var sql = $@"INSERT INTO tab_log(login, date, test_name, score)
                               VALUES('{user.Login}','{DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss")}','{testName}',{score});";
             command.CommandText = sql;
             command.ExecuteNonQuery();
             Close();
-        }*/
+        }
 
         public List<QuizLog> ShowScoreHistory(User user)
         {

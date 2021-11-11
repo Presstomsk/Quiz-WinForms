@@ -50,7 +50,7 @@ namespace WinForms
 
         private void button1_Click(object sender, System.EventArgs e)
         {
-            CheckQuizForm quiz = new CheckQuizForm(this,true);
+            CheckQuizForm quiz = new CheckQuizForm(this,user,true);
             Hide();
             quiz.Show();
             quiz.Location = Location;

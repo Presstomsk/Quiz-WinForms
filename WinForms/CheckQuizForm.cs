@@ -13,6 +13,8 @@ namespace WinForms
     public partial class CheckQuizForm : Form
     {
         Form formToOpen;
+
+        User user;
         string selectedString;
         bool formFlag;
         public CheckQuizForm()
@@ -28,6 +30,15 @@ namespace WinForms
             comboBox1.Text = comboBox1.Items[0].ToString();
             formFlag = flag;
 
+        }
+        public CheckQuizForm(UserMenuForm form, User user, bool flag)
+        {
+            InitializeComponent();
+            formToOpen = form;
+            comboBox1.Items.AddRange(new string[] { "История", "География" });
+            comboBox1.Text = comboBox1.Items[0].ToString();
+            formFlag = flag;
+            this.user = user;
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -48,7 +59,10 @@ namespace WinForms
             }
             else 
             {
-            
+                QuizForm quiz = new QuizForm(this, user, selectedString);
+                Hide();
+                quiz.Show();
+                quiz.Location = Location;
             }
         }
 
