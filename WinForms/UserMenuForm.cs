@@ -42,7 +42,7 @@ namespace WinForms
 
         private void button3_Click(object sender, System.EventArgs e)
         {
-            CheckQuizForm top20 = new CheckQuizForm(this);
+            CheckQuizForm top20 = new CheckQuizForm(this,false);
             Hide();
             top20.Show();
             top20.Location = Location;
@@ -50,7 +50,10 @@ namespace WinForms
 
         private void button1_Click(object sender, System.EventArgs e)
         {
-
+            CheckQuizForm quiz = new CheckQuizForm(this,true);
+            Hide();
+            quiz.Show();
+            quiz.Location = Location;
         }
 
         private void button4_Click(object sender, System.EventArgs e)

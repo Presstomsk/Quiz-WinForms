@@ -14,17 +14,19 @@ namespace WinForms
     {
         Form formToOpen;
         string selectedString;
+        bool formFlag;
         public CheckQuizForm()
         {
             InitializeComponent();
         }
 
-        public CheckQuizForm(UserMenuForm form)
+        public CheckQuizForm(UserMenuForm form, bool flag)
         {
             InitializeComponent();
             formToOpen = form;            
             comboBox1.Items.AddRange(new string[] { "История", "География" });
             comboBox1.Text = comboBox1.Items[0].ToString();
+            formFlag = flag;
 
         }
 
@@ -37,10 +39,17 @@ namespace WinForms
 
         private void button1_Click(object sender, EventArgs e)
         {
-            TOP20Form top20 = new TOP20Form(this,selectedString);
-            Hide();
-            top20.Show();
-            top20.Location = Location;
+            if (!formFlag)
+            {
+                TOP20Form top20 = new TOP20Form(this, selectedString);
+                Hide();
+                top20.Show();
+                top20.Location = Location;
+            }
+            else 
+            {
+            
+            }
         }
 
         private void CheckQuizForm_FormClosing(object sender, FormClosingEventArgs e)
