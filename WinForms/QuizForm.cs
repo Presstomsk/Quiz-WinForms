@@ -82,7 +82,7 @@ namespace WinForms
             }
             else
             {
-                label7.Text = "Недопустимые символы";
+                label7.Text = "Введите значение";
                 label7.ForeColor = Color.Red;
             }
             if (counter < 20)
@@ -102,6 +102,7 @@ namespace WinForms
                 textBox1.Hide();
                 button1.Hide();
                 label6.Show();
+                label7.Hide();
                 label6.Text = $"Ваш результат: {score} из 20";
                 db = new DataBaseConnect();
                 db.ScoreHistory(user, testName, score);
