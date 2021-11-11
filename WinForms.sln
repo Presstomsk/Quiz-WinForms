@@ -5,6 +5,13 @@ VisualStudioVersion = 16.0.31729.503
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WinForms", "WinForms\WinForms.csproj", "{0B66924B-71E1-491C-B9C6-7D4E531E096C}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{39044B29-1CAC-4657-828C-3A15CB5406BE}"
+	ProjectSection(SolutionItems) = preProject
+		WinForms\bin\Debug\CSTR.json = WinForms\bin\Debug\CSTR.json
+		WinForms\bin\Debug\geography.json = WinForms\bin\Debug\geography.json
+		WinForms\bin\Debug\history.json = WinForms\bin\Debug\history.json
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
