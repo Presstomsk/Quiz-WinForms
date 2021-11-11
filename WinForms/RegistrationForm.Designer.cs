@@ -102,6 +102,7 @@ namespace WinForms
             this.label6.Size = new System.Drawing.Size(13, 13);
             this.label6.TabIndex = 20;
             this.label6.Text = "  ";
+            this.label6.Click += new System.EventHandler(this.label6_Click);
             // 
             // label5
             // 

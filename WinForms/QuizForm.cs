@@ -74,10 +74,17 @@ namespace WinForms
 
         private void button1_Click(object sender, EventArgs e)
         {
-            answ = Convert.ToUInt32(textBox1.Text);
-
-            if (answ == deserializedQuestions[counter].TrueAnswer) score++;
-            counter++;
+            if (textBox1.Text != "")
+            {
+                answ = Convert.ToUInt32(textBox1.Text);
+                if (answ == deserializedQuestions[counter].TrueAnswer) score++;
+                counter++;
+            }
+            else
+            {
+                label7.Text = "Недопустимые символы";
+                label7.ForeColor = Color.Red;
+            }
             if (counter < 20)
             {
                 deserializedQuestions = test.QuestionsDeserialization(path);
