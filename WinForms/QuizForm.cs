@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -21,7 +22,7 @@ namespace WinForms
         User user;
 
         uint answ, score;        
-        string testName;
+        string testName, numberOfQuestions;
 
         int counter;
         string path;
@@ -54,7 +55,11 @@ namespace WinForms
 
             label3.Text = deserializedQuestions[counter].Question;
 
-            foreach (var ans in deserializedQuestions[counter].Answers) label4.Text += $"{ans.Key} - {ans.Value}\n";
+            foreach (var ans in deserializedQuestions[counter].Answers)
+            { 
+                label4.Text += $"{ans.Key} - {ans.Value}\n";
+                numberOfQuestions = ans.Key;
+            }
 
             this.user = user;
            
@@ -74,28 +79,38 @@ namespace WinForms
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if (textBox1.Text != "")
+            string pattern = $"^[1-{numberOfQuestions}]" + "{1}$";
+            bool checkResult;
+            checkResult = Regex.IsMatch(textBox1.Text, pattern);
+
+
+            if (checkResult && counter < 19)
             {
                 answ = Convert.ToUInt32(textBox1.Text);
                 if (answ == deserializedQuestions[counter].TrueAnswer) score++;
                 counter++;
-            }
-            else
-            {
-                label7.Text = "Введите значение";
-                label7.ForeColor = Color.Red;
-            }
-            if (counter < 20)
-            {
                 deserializedQuestions = test.QuestionsDeserialization(path);
                 label4.Text = "";
                 label3.Text = deserializedQuestions[counter].Question;
-                foreach (var ans in deserializedQuestions[counter].Answers) label4.Text += $"{ans.Key} - {ans.Value}\n";
-               
+                foreach (var ans in deserializedQuestions[counter].Answers)
+                {
+                    label4.Text += $"{ans.Key} - {ans.Value}\n";
+                    numberOfQuestions = ans.Key;
+                }
+                textBox1.Text = "";
+                label7.Hide();
+            }
+            else if (!checkResult && counter < 19)
+            {
+            
+                    label7.Show();
+                    label7.Text = "Введите корректное значение";
+                    label7.ForeColor = Color.Red;
+                
             }
             else
             {
-               
+
                 label3.Hide();
                 label4.Hide();
                 label5.Hide();

@@ -11,7 +11,7 @@ namespace WinForms
 
         public DataBaseConnect()
         {
-            var connectionString = ConnectionString.Init("CSTR.json");
+            var connectionString = ConnectionString.Init($@"{Environment.CurrentDirectory}\CSTR.json");
             db = new MySqlConnection(connectionString);
             command = new MySqlCommand { Connection = db };
         }

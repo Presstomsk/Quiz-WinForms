@@ -141,7 +141,7 @@ namespace WinForms
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(214, 281);
+            this.label7.Location = new System.Drawing.Point(189, 283);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(13, 13);
             this.label7.TabIndex = 27;
